@@ -17,14 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6C-kv-f0T">
-                                <rect key="frame" x="0.0" y="567" width="414" height="41"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.90431535243988037" green="0.90053391456604004" blue="0.8995937705039978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rts-oP-TuY">
                                 <rect key="frame" x="0.0" y="55" width="414" height="39"/>
                                 <animations/>
@@ -36,12 +28,32 @@
                                     <action selector="scanMeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O61-gC-Svt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6C-kv-f0T">
+                                <rect key="frame" x="0.0" y="531" width="414" height="41"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90431535243988037" green="0.90053391456604004" blue="0.8995937705039978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIh-v0-tSK">
+                                <rect key="frame" x="0.0" y="580" width="414" height="39"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90431535243988037" green="0.90053391456604004" blue="0.8995937705039978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tLz-ah-mCd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="cancelButton" destination="kIh-v0-tSK" id="JhI-CE-jqg"/>
                         <outlet property="label" destination="v6C-kv-f0T" id="7Rk-eH-qXp"/>
                     </connections>
                 </viewController>
