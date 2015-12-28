@@ -12,6 +12,7 @@
 		00DF4C1F1C31CF220084ACA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DF4C1D1C31CF220084ACA2 /* Main.storyboard */; };
 		00DF4C211C31CF220084ACA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DF4C201C31CF220084ACA2 /* Assets.xcassets */; };
 		00DF4C241C31CF220084ACA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DF4C221C31CF220084ACA2 /* LaunchScreen.storyboard */; };
+		00DF4C2C1C31CF710084ACA2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DF4C2B1C31CF710084ACA2 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		00DF4C201C31CF220084ACA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00DF4C231C31CF220084ACA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00DF4C251C31CF220084ACA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00DF4C2B1C31CF710084ACA2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00DF4C2C1C31CF710084ACA2 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		00DF4C0D1C31CF220084ACA2 = {
 			isa = PBXGroup;
 			children = (
+				00DF4C2B1C31CF710084ACA2 /* AVFoundation.framework */,
 				00DF4C181C31CF220084ACA2 /* QRCodeScanner */,
 				00DF4C171C31CF220084ACA2 /* Products */,
 			);
