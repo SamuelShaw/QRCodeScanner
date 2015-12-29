@@ -18,6 +18,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     @IBOutlet weak var label: UILabel!
     
+    
+    @IBOutlet weak var openURLButton: UIButton!
+    
     @IBOutlet weak var cancelButton: UIButton!
     
     
@@ -29,6 +32,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         label.hidden = true
         cancelButton.hidden = true
+        openURLButton.hidden = true
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +45,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     {
         label.hidden = false
         cancelButton.hidden = false
+        openURLButton.hidden = false
+
         
         let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         
@@ -78,6 +85,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         view.bringSubviewToFront(label)
         view.bringSubviewToFront(cancelButton)
+        view.bringSubviewToFront(openURLButton)
+
 
         
         // bring the green code box into view
@@ -116,12 +125,27 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     {
         label.hidden = true
         cancelButton.hidden = true
-        
+        openURLButton.hidden = true
+
+
         captureSession?.stopRunning()
         qrCodeFrameView?.removeFromSuperview()
         videoPreviewLayer?.removeFromSuperlayer()
     }
     
+    @IBAction func openURLButtonPressed(sender: AnyObject)
+    {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "PassData")
+        {
+            let webVC = segue.destinationViewController as! WebViewController
+            
+            webVC.QRlink = label.text!
+        }
+    }
 
 }
 

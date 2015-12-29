@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00534C781C31FCA1004D6208 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00534C771C31FCA1004D6208 /* WebViewController.swift */; };
 		00DF4C1A1C31CF220084ACA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF4C191C31CF220084ACA2 /* AppDelegate.swift */; };
 		00DF4C1C1C31CF220084ACA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF4C1B1C31CF220084ACA2 /* ViewController.swift */; };
 		00DF4C1F1C31CF220084ACA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DF4C1D1C31CF220084ACA2 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00534C771C31FCA1004D6208 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		00DF4C161C31CF220084ACA2 /* QRCodeScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DF4C191C31CF220084ACA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00DF4C1B1C31CF220084ACA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				00DF4C191C31CF220084ACA2 /* AppDelegate.swift */,
 				00DF4C1B1C31CF220084ACA2 /* ViewController.swift */,
+				00534C771C31FCA1004D6208 /* WebViewController.swift */,
 				00DF4C1D1C31CF220084ACA2 /* Main.storyboard */,
 				00DF4C201C31CF220084ACA2 /* Assets.xcassets */,
 				00DF4C221C31CF220084ACA2 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00DF4C1C1C31CF220084ACA2 /* ViewController.swift in Sources */,
+				00534C781C31FCA1004D6208 /* WebViewController.swift in Sources */,
 				00DF4C1A1C31CF220084ACA2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +295,7 @@
 				00DF4C2A1C31CF220084ACA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

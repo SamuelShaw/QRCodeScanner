@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="55" width="414" height="39"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90431535243988037" green="0.90053391456604004" blue="0.8995937705039978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Begin Scan">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -33,7 +33,7 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.90431535243988037" green="0.90053391456604004" blue="0.8995937705039978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIh-v0-tSK">
@@ -47,6 +47,18 @@
                                     <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tLz-ah-mCd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z5-hm-KPJ">
+                                <rect key="frame" x="0.0" y="484" width="414" height="39"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90431535243988037" green="0.90053391456604004" blue="0.8995937705039978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="OPEN URL">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openURLButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzg-9q-Wup"/>
+                                    <segue destination="F0v-5V-Ato" kind="show" identifier="PassData" id="J74-uR-3RF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,11 +67,81 @@
                     <connections>
                         <outlet property="cancelButton" destination="kIh-v0-tSK" id="JhI-CE-jqg"/>
                         <outlet property="label" destination="v6C-kv-f0T" id="7Rk-eH-qXp"/>
+                        <outlet property="openURLButton" destination="3Z5-hm-KPJ" id="9Ag-x0-4v4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="422" y="331"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Gxw-XG-Oej">
+            <objects>
+                <viewController id="F0v-5V-Ato" customClass="WebViewController" customModule="QRCodeScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WlM-Zr-2Wq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pp2-RB-seB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jhs-PE-dir">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNg-m4-7I6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="xQ3-qI-EDB">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3gH-fk-2tG">
+                                            <connections>
+                                                <action selector="goBackButtonPressed:" destination="F0v-5V-Ato" id="FjY-Wc-79z"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-z3-tfv">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="MSj-3s-bQK">
+                                        <connections>
+                                            <action selector="stopLoading" destination="WLL-C2-aYj" id="aZS-i7-3nk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="refresh" id="HEz-4w-78F">
+                                        <connections>
+                                            <action selector="reload" destination="WLL-C2-aYj" id="gNO-lT-0C5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="B5n-qO-z6c"/>
+                                    <barButtonItem systemItem="rewind" id="llK-I9-r5O">
+                                        <connections>
+                                            <action selector="goBack" destination="WLL-C2-aYj" id="B4p-5X-mml"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="22E-jG-e2s">
+                                        <connections>
+                                            <action selector="goForward" destination="WLL-C2-aYj" id="lKR-lU-z4S"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WLL-C2-aYj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="648"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="WLL-C2-aYj" id="IcQ-m1-Dc7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iep-lS-bUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="331"/>
         </scene>
     </scenes>
 </document>
